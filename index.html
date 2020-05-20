@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Digital Clock with HTML CSS & JS</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+    
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 80px;
+            border: 1px solid #ccc;
+            padding: 5px 15px 5px 15px;
+        }
+    </style>
+    
+    
+    
 </head>
 <body>
-    
+<h1>Digital Clock</h1>
+<div id="myClockDisplay" class="clock"<></div> 
+<script>
+function showTime() {
+let date = new Date();
+let h = date.getHours(); //0-23
+let m = date.getMinutes; //0-59
+let s = date.getSeconds; //0-59
+
+h = h  < 10 ? "0" + h : h;
+// if (h < 10) {
+// h = "0" + h;
+//  }
+m = m < 10 ? "0" + m : m;
+//if ( m < 10){
+// m = "0" + m;
+//}
+
+s = s < 10 ? "0" + s : s; 
+//if (s < 10) {
+// s = "0" + s;
+//}
+
+let time = h + ":" + m + ":" + s;
+document.getElementById("myClockDisplay").innerText = time;
+document.getElementById("myClockDisplay").textContent = time;
+setTimeout(showTime, 1000);
+
+}
+
+showTime();
+
+
+
+</script>
+
+
+
+
+
 </body>
+
 </html>
